@@ -27,24 +27,12 @@
         // Private functions
         var init = function(){
             var settings = $.extend(defaults, options);
-            $(_this).click(function(e){
-                showLayer();
-                showContent();
-                console.log('clicked!');
-            });
+            fuga();
         };
         /**
-         * Show Layer
+         * fuga
          */
-        var showLayer = function(){};
-        /**
-         * Show Content as a modal.
-         */
-        var showContent = function(){};
-        /**
-         * Close the modal
-         */
-        var close = function(){};
+        var fuga = function(){};
 
         // Public functions
         _this.hoge = function(){};
