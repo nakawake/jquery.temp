@@ -23,10 +23,11 @@
         }
 
         var _this = this;
+        var obj = {};
 
         // Private functions
         var init = function(){
-            var settings = $.extend(defaults, options);
+            obj.settings = $.extend(defaults, options);
             fuga();
         };
         /**
@@ -36,6 +37,9 @@
 
         // Public functions
         _this.hoge = function(){};
+
+        // Initialize
+        init();
 
         // Return this for Method Chain
         return this;
