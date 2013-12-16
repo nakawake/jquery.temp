@@ -5,45 +5,52 @@
  * @Author Nakawake
  */
 ;(function($){
-    var defaults = {
-        // Options
-        hoge: '',
-        // Callbacks
-        onHoge: function(){}
+    $.temp = function(elememt, options){
+        var defaults = {
+            // Options
+            hoge: '',
+            // Callbacks
+            onHoge: function(){}
+        };
+
+        var _this = this;
+        _this.settings = {};
+
+        // Private functions
+        var init = function(){
+            _this.settings = $.extend({}, defaults, options);
+            fuga();
+        }
+
+        var fuga = function(){
+        };
+
+        // Public functions
+        _this.getSettings = function(){
+            return _this.settings;
+        };
+
+        init();
+
+        return this;
     };
 
     $.fn.temp = function(options){
-        // Return this
         if(this.length == 0) return this;
 
-        // Support mutltiple elements
         if(this.length > 1){
             this.each(function(){$(this).temp(options)});
             return this;
         }
 
-        var _this = this;
-        var obj = {};
+        //console.log('each');
+        var temp = new $.temp(this, options);
 
-        // Private functions
-        var init = function(){
-            obj.settings = $.extend(defaults, options);
-            fuga();
+        // Public function
+        this.getSettings = function(){
+            return temp.getSettings();
         };
-        /**
-         * fuga
-         */
-        var fuga = function(){};
 
-        // Public functions
-        _this.hoge = function(){};
-
-        // Initialize
-        init();
-
-        // Return this for Method Chain
         return this;
-    }
-
-
+    };
 })(jQuery);

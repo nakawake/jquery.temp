@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery temp</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.temp.js"></script>
+<script>
+$(function(){
+    var temp_a = $('#temp_a').temp({
+        hoge: 'temp A'
+    });
+    var temp_b = $('#temp_b').temp({
+        hoge: 'temp B'
+    })
+
+    console.log(temp_a.getSettings());
+    console.log(temp_b.getSettings());
+});
+</script>
+</head>
+<body>
+</body>
+</html>
